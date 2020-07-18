@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient( -135deg, #c850c0, #4158d0);
+}
+
+.wrapper {
+  width: 450px;
+  background: #fff;
+  padding: 20px 30px 30px 30px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.wrapper .input-data {
+  height: 50px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .input-data input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label {
+  transform: translateY( -20px);/*Смещение по наведению по Y*/
+  font-size: 15px;
+  color: #4158d0;
+  /* valid если чтото введено не перекрывает текст текстом */
+}
+
+.wrapper .input-data label {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none; /*ПИСАТЬ СВЕРХУ NAME*/
+  transition: all 0.3s ease; /*ПЕРЕХОД*/
+}
+
+.wrapper .input-data .underline {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+  
+}
+
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #4158d0;
+  transform: scaleX(0); /*преобразование*/
+  transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before {
+  transform: scaleX(1);/*Смещение по наведению по Y*/
+  
+  /* valid если чтото введено не перекрывает текст текстом */
+}
+
+button {
+  margin: 10px;
+  width: 250px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient( -135deg, #d7eb7d, #82fd88);
+  border-radius: 5px;
+}
